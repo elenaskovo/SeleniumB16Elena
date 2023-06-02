@@ -17,8 +17,17 @@ public class class6Task2 extends CommonMethods {
         String browser="chrome";
         openBrowserAndLaunchApplication(url,browser);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        WebElement userButton=driver.findElement(By.xpath("//button [@type='button']"));
+        WebElement userButton=driver.findElement(By.xpath("//button[@type='button']"));
         userButton.click();
+       WebElement firstNameEle= driver.findElement(By.xpath("//div[@id='First-Name']//p"));
+        String firstName=firstNameEle.getText();
+        //String firstName = driver.findElement(By.xpath("//div[@id='First-Name']//p")).getText();
+        //System.out.println(firstName);
+        String[] userName = firstName.split(":");
+        //System.out.println(userName[0]);
+        System.out.println(userName[1]);
+
+
 
 
 
